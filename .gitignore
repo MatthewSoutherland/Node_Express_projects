@@ -1,3 +1,2 @@
 cloner/
-/node_modules
-.env
+final/
