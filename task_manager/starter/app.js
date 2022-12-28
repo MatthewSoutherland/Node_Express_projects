@@ -1,8 +1,15 @@
 const express = require("express");
 const app = express();
+const tasks = require("./routes/tasks");
+
+// middleware
+app.use(express.json());
 
 // set up a public folder
 app.use(express.static("./public"));
+
+// root route for tasks router
+app.use("/api/v1/tasks", tasks);
 
 app.get("./home", (req, res) => {
   res.send("Task manager app");
