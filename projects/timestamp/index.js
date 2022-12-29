@@ -18,8 +18,11 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+// tests
+//https://boilerplate-project-timestamp.matthewsoutherl.repl.co/api/1451001600000
+//https://boilerplate-project-timestamp-2.matthewsoutherl.repl.co/api/1451001600000
 // your first API endpoint...
-app.get("/api/timestamp/:timestamp", function (req, res) {
+app.get("/api/:timestamp", function (req, res) {
   let timestamp = req.params.timestamp;
 
   if (timestamp.match(/\d{5,}/)) {
@@ -33,7 +36,7 @@ app.get("/api/timestamp/:timestamp", function (req, res) {
   res.json({ unix: date.valueOf(), utc: date.toUTCString() });
 });
 
-app.get("/api/timestamp/", (req, res) => {
+app.get("/api/", (req, res) => {
   let date = new Date();
   res.json({ unix: date.valueOf(), utc: date.toUTCString() });
 });
