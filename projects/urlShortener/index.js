@@ -11,10 +11,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // connect to database
-mongoose.connect(
-  "mongodb+srv://matt:champ2@nodeexpressprojects.cabrqck.mongodb.net/?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect("<password>", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 console.log(mongoose.connection.readyState);
 
 const schema = new mongoose.Schema({ url: "string" });
